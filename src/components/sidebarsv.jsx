@@ -3,12 +3,12 @@ import logo from "../asset/logojetcoms.svg";
 import { RiMenu2Line } from "react-icons/ri";
 import iconGrid from "../asset/iconGrid.svg"; 
 import iconProject from "../asset/project.svg"; 
-import iconApproval from "../asset/icApproval.svg"; 
 import iconReimburse from "../asset/reimburst2.svg"; 
 import iconRiwayat from "../asset/riwayat.svg"; 
+import iconApprove from "../asset/approve.svg"; 
 import { useLocation } from "react-router-dom";
 
-const Sidebar = () => {
+const SidebarSV = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false); 
     const [isMobile, setIsMobile] = useState(false); 
     const sidebarRef = useRef(null); 
@@ -72,16 +72,20 @@ const Sidebar = () => {
                 ></div>
             )}
 
-            <div ref={sidebarRef} className={`fixed top-0 left-0 w-[250px] h-full bg-[#1D1C21] shadow-md z-50 transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+            <div
+                ref={sidebarRef}
+                className={`fixed top-0 left-0 w-[250px] h-full bg-[#1D1C21] shadow-md z-50 transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+                    }`}
+            >
                 <div className="flex items-center pl-7 py-10">
-                    <img src={logo} alt="Logo" className="w-44   h-auto rounded-xl" />
+                    <img src={logo} alt="Logo" className="w-44 h-auto rounded-xl" />
                 </div>
 
                 <ul className="mt-2">
                     <li className="py-2">
                         <a
-                            href="/member/dashboard"
-                            className={"flex items-center text-white font-sans hover:bg-neutral-700 transition-all duration-200 h-10 w-full "+(location.pathname==='/member/dashboard'?'border-l-4 border-white':'')}
+                            href="/supervisor/dashboard"
+                            className={"flex items-center text-white font-sans hover:bg-neutral-700 transition-all duration-200 h-10 w-full "+(location.pathname==='/supervisor/dashboard'?'border-l-4 border-white':'')}
                             style={{ fontFamily: 'Poppins, sans-serif' }}
                         >
                             <img src={iconGrid} alt="Grid Icon" className="mr-5 ml-10" style={{ width: "20px", height: "20px" }} />
@@ -93,8 +97,8 @@ const Sidebar = () => {
                 <ul className="mt-2">
                     <li className="py-2">
                         <a
-                            href="/member/project"
-                            className={"flex items-center text-white font-sans hover:bg-neutral-700 transition-all duration-200 h-10 w-full "+(location.pathname==='/member/project'?'border-l-4 border-white':'')}
+                            href="/supervisor/project"
+                            className={"flex items-center text-white font-sans hover:bg-neutral-700 transition-all duration-200 h-10 w-full "+(location.pathname==='/supervisor/project'?'border-l-4 border-white':'')}
                             style={{ fontFamily: 'Poppins, sans-serif' }}
                         >
                             <img src={iconProject} alt="Grid Icon" className="mr-5 ml-10" style={{ width: "20px", height: "20px" }} />
@@ -106,8 +110,8 @@ const Sidebar = () => {
                 <ul className="mt-2">
                     <li className="py-2">
                         <a
-                            href="/member/reimburse"
-                            className={"flex items-center text-white font-sans hover:bg-neutral-700 transition-all duration-200 h-10 w-full "+(location.pathname==='/member/reimburse'?'border-l-4 border-white':'')}
+                            href="/supervisor/reimburse"
+                            className={"flex items-center text-white font-sans hover:bg-neutral-700 transition-all duration-200 h-10 w-full "+(location.pathname==='/supervisor/reimburse'?'border-l-4 border-white':'')}
                             style={{ fontFamily: 'Poppins, sans-serif' }}
                         >
                             <img src={iconReimburse} alt="Grid Icon" className="mr-5 ml-10" style={{ width: "20px", height: "20px" }} />
@@ -119,8 +123,8 @@ const Sidebar = () => {
                 <ul className="mt-2">
                     <li className="py-2">
                         <a
-                            href="/member/riwayat"
-                            className={"flex items-center text-white font-sans hover:bg-neutral-700 transition-all duration-200 h-10 w-full "+(location.pathname==='/member/riwayat'?'border-l-4 border-white':'')}
+                            href="/supervisor/riwayat"
+                            className={"flex items-center text-white font-sans hover:bg-neutral-700 transition-all duration-200 h-10 w-full "+(location.pathname==='/supervisor/riwayat'?'border-l-4 border-white':'')}
                             style={{ fontFamily: 'Poppins, sans-serif' }}
                         >
                             <img src={iconRiwayat} alt="Grid Icon" className="mr-5 ml-10" style={{ width: "20px", height: "20px" }} />
@@ -132,12 +136,12 @@ const Sidebar = () => {
                 <ul className="mt-2">
                     <li className="py-2">
                         <a
-                            href="/member/approval"
-                            className={"flex items-center text-white font-sans hover:bg-neutral-700 transition-all duration-200 h-10 w-full "+(location.pathname==='/member/approval'?'border-l-4 border-white':'')}
+                            href="/supervisor/approve"
+                            className={"flex items-center text-white font-sans hover:bg-neutral-700 transition-all duration-200 h-10 w-full "+(location.pathname==='/supervisor/approve'?'border-l-4 border-white':'')}
                             style={{ fontFamily: 'Poppins, sans-serif' }}
                         >
-                            <img src={iconApproval} alt="Grid Icon" className="mr-5 ml-10" style={{ width: "22px", height: "22px" }} />
-                            Approval
+                            <img src={iconApprove} alt="Grid Icon" className="mr-5 ml-10" style={{ width: "20px", height: "20px" }} />
+                            Approve
                         </a>
                     </li>
                 </ul>
@@ -148,4 +152,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default SidebarSV;
